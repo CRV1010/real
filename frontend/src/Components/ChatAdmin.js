@@ -69,7 +69,7 @@ const ChatAdmin = () => {
   // console.log(messages, "msgs");
 
   useEffect(() => {
-    setSocket(io("https://realestate-oho0.onrender.com/"));
+    setSocket(io("https://realestate-oho0.onrender.com:5000"));
     // window.location.reload(false);
   }, []);
 
