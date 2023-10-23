@@ -53,7 +53,7 @@ export default function () {
   }
 
   async function getData() {
-    const result = await fetch("http://localhost:5000/search-property-two", {
+    const result = await fetch("https://realestate-oho0.onrender.com/search-property-two", {
       method: "post",
       body: JSON.stringify({ propertyFor, type, State, City, zone, rooms, price }),
       headers: {
@@ -126,7 +126,9 @@ export default function () {
                 </li>
               );
             })
-            : ""}
+            : (
+              <h1>No Property Availabe with given requirements</h1>
+            )}
         </ul>
       </div>
       <div className="text-center">

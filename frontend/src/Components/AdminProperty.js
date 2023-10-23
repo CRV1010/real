@@ -17,7 +17,7 @@ const AdminProperty = () => {
     }, []);
 
     async function getData () {
-      const result = await fetch("http://localhost:5000/get-data", {
+      const result = await fetch("https://realestate-oho0.onrender.com/get-data", {
         method: "get",
         headers: {
           "Content-Type": "application/json",
@@ -56,7 +56,7 @@ const AdminProperty = () => {
            }
          );
            console.log("delete Id",id);
-         let dataprop = await fetch(`http://localhost:5000/property/${id}`, {
+         let dataprop = await fetch(`https://realestate-oho0.onrender.com/property/${id}`, {
            method: "delete",
            // headers: {
            //   authorization: `bearer ${JSON.parse(localStorage.getItem("token"))}`,

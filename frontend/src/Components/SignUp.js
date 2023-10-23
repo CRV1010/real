@@ -30,7 +30,7 @@ const SignUp = () => {
 
   const clickHandler = async () => {
     if (username !== "" && email !== "" && phone !== "" && password !== "") {
-      let data = await fetch("http://localhost:5000/google-check", {
+      let data = await fetch("https://realestate-oho0.onrender.com/google-check", {
         method: "post",
         body: JSON.stringify({
           username,
@@ -43,7 +43,7 @@ const SignUp = () => {
       data = await data.json();
       var image = "avtar.png";
       if (!data) {
-        data = await fetch("http://localhost:5000/signup", {
+        data = await fetch("https://realestate-oho0.onrender.com/signup", {
           method: "post",
           body: JSON.stringify({
             username,
@@ -228,7 +228,7 @@ const SignUp = () => {
                     console.log(name, gmail);
 
                     let data = await fetch(
-                      "http://localhost:5000/google-check",
+                      "https://realestate-oho0.onrender.com/google-check",
                       {
                         method: "post",
                         body: JSON.stringify({
@@ -244,7 +244,7 @@ const SignUp = () => {
                     console.log("result :", data);
                     data = await data.json();
                     if (!data) {
-                      data = await fetch("http://localhost:5000/google-login", {
+                      data = await fetch("https://realestate-oho0.onrender.com/google-login", {
                         method: "post",
                         body: JSON.stringify({
                           username: name,

@@ -27,7 +27,7 @@ const Comment = () => {
   };
 
   const getComments = async () => {
-    const result = await fetch("http://localhost:5000/show-comments", {
+    const result = await fetch("https://realestate-oho0.onrender.com/show-comments", {
       method: "get",
       headers: {
         "Content-Type": "application/json",
@@ -37,7 +37,7 @@ const Comment = () => {
     var myCommentData = [];
     for (let i = 0; i < data.length; i++) {
       // console.log(data[i].uid);
-      const result1 = await fetch("http://localhost:5000/getUserDetails", {
+      const result1 = await fetch("https://realestate-oho0.onrender.com/getUserDetails", {
         method: "post",
         body: JSON.stringify({ _id: data[i].uid }),
         headers: {
@@ -87,7 +87,7 @@ const Comment = () => {
 
 
   const saveComment = async () => {
-    const result = await fetch("http://localhost:5000/comment", {
+    const result = await fetch("https://realestate-oho0.onrender.com/comment", {
       method: "post",
       body: JSON.stringify({ uid: user._id, comment: userComment }),
       headers: {
@@ -122,7 +122,7 @@ const Comment = () => {
       progress: undefined,
       theme: "light",
     });
-    let data = await fetch(`http://localhost:5000/commentDelete/${id}`, {
+    let data = await fetch(`https://realestate-oho0.onrender.com/commentDelete/${id}`, {
       method: "delete",
     });
     data = await data.json();

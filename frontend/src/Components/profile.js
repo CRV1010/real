@@ -19,7 +19,7 @@ export default function (props) {
   }, []);
 
   async function getUserData() {
-    const result = await fetch("http://localhost:5000/getUserDetails", {
+    const result = await fetch("https://realestate-oho0.onrender.com/getUserDetails", {
       method: "post",
       body: JSON.stringify({ _id }),
       headers: {
@@ -32,7 +32,7 @@ export default function (props) {
   }
 
   async function getPropertyData() {
-    const result = await fetch("http://localhost:5000/getPropertyDetails", {
+    const result = await fetch("https://realestate-oho0.onrender.com/getPropertyDetails", {
       method: "post",
       body: JSON.stringify({ sellerId: _id }),
       headers: {
@@ -56,7 +56,7 @@ export default function (props) {
       progress: undefined,
       theme: "light",
     });
-    let data = await fetch(`http://localhost:5000/property/${id}`, {
+    let data = await fetch(`https://realestate-oho0.onrender.com/property/${id}`, {
       method: "delete",
       // headers: {
       //   authorization: `bearer ${JSON.parse(localStorage.getItem("token"))}`,
@@ -74,7 +74,7 @@ export default function (props) {
   };
 
   const updateProperty = async (id) => {
-    const result = await fetch(`http://localhost:5000/getPropertyDetails`, {
+    const result = await fetch(`https://realestate-oho0.onrender.com/getPropertyDetails`, {
       method: "post",
       body: JSON.stringify({ _id: id }),
       headers: {
@@ -111,7 +111,7 @@ export default function (props) {
 
   async function Increse_Likes(e) {
     var imageId = e.target.value;
-    const result = await fetch("http://localhost:5000/like", {
+    const result = await fetch("https://realestate-oho0.onrender.com/like", {
       method: "put",
       body: JSON.stringify({ user_id, imageId }),
       headers: {

@@ -31,7 +31,7 @@ const UpdateUser = () => {
 
     //to insert the image in my images folder and get te images names to store in database
     const result = await axios.post(
-      "http://localhost:5000/upload-imageProfile", //this is api call here
+      "https://realestate-oho0.onrender.com/upload-imageProfile", //this is api call here
       formData,
       {
         headers: { "Content-Type": "multipart/form-data" },
@@ -42,7 +42,7 @@ const UpdateUser = () => {
     const image = result.data;
 
     if (username !== "" && email !== "" && phone !== "" && dob !== "") {
-      let data = await fetch(`http://localhost:5000/updateUser/${id}`, {
+      let data = await fetch(`https://realestate-oho0.onrender.com/updateUser/${id}`, {
         method: "put",
         body: JSON.stringify({
           username,
@@ -61,10 +61,11 @@ const UpdateUser = () => {
       if (data.token) {
         localStorage.setItem("user", JSON.stringify(data.result));
         localStorage.setItem("token", JSON.stringify(data.token));
-        navigate("/profile");
+        window.location.href = "/profile";
+        // navigate("/profile");
       }
     } else {
-      alert("You can't keep an empty field");
+      alert("You can't keep an field empty");
     }
   };
 

@@ -88,7 +88,7 @@ export default function (props) {
 
     //to insert the image in my images folder and get te images names to store in database
     const result = await axios.post(
-      "http://localhost:5000/upload-image", //this is api call here
+      "https://realestate-oho0.onrender.com/upload-image", //this is api call here
       formData,
       {
         headers: { "Content-Type": "multipart/form-data" },
@@ -99,7 +99,7 @@ export default function (props) {
     const imageName = result.data;
 
     //inserting information to database
-    const data = await fetch("http://localhost:5000/upload-database", {
+    const data = await fetch("https://realestate-oho0.onrender.com/upload-database", {
       method: "post",
       body: JSON.stringify({
         selectedValue,
@@ -134,7 +134,8 @@ export default function (props) {
       progress: undefined,
       theme: "light",
     });
-    navigate("/explore")
+    window.location.href = "/explore";
+    // navigate("/explore")
   };
 
   const deleteImage = (e) => {

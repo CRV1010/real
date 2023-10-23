@@ -22,7 +22,7 @@ const ChangePassword = () => {
         let email = JSON.parse(localStorage.getItem("email"));
         console.log(email);
         let data = await fetch(
-          `http://localhost:5000/update_password/` + email,
+          `https://realestate-oho0.onrender.com/update_password/` + email,
           {
             method: "put",
             body: JSON.stringify({ password }),

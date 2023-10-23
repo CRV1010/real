@@ -20,7 +20,7 @@ export default function () {
   }, []);
 
   async function getData() {
-    const result = await fetch("http://localhost:5000/get-data", {
+    const result = await fetch("https://realestate-oho0.onrender.com/get-data", {
       method: "get",
       headers: {
         "Content-Type": "application/json",
@@ -33,7 +33,7 @@ export default function () {
   const searchHandle = async (event) => {
     let key = event.target.value;
     if (key) {
-      let data = await fetch(`http://localhost:5000/search/${key}`, {
+      let data = await fetch(`https://realestate-oho0.onrender.com/search/${key}`, {
         headers: {
           mode: "no-cors",
         },

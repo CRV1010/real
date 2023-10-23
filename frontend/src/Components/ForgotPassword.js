@@ -21,7 +21,7 @@ const ForgotPassword = () => {
 
   const clickHandler = async () => {
     if (email !== "") {
-      let data = await fetch("http://localhost:5000/otp_auth", {
+      let data = await fetch("https://realestate-oho0.onrender.com/otp_auth", {
         method: "post",
         body: JSON.stringify({ email }),
         headers: {

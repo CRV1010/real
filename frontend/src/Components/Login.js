@@ -27,7 +27,7 @@ const Login = () => {
 
   const clickHandler = async () => {
     if (email !== "" && password !== "") {
-      let data = await fetch("http://localhost:5000/login", {
+      let data = await fetch("https://realestate-oho0.onrender.com/login", {
         method: "post",
         body: JSON.stringify({ email, password }),
         headers: {
@@ -159,7 +159,7 @@ const Login = () => {
                     console.log(name, gmail);
 
                     let data = await fetch(
-                      "http://localhost:5000/google-check",
+                      "https://realestate-oho0.onrender.com/google-check",
                       {
                         method: "post",
                         body: JSON.stringify({
@@ -175,7 +175,7 @@ const Login = () => {
                     console.log("result :", data);
                     data = await data.json();
                     if (!data) {
-                      data = await fetch("http://localhost:5000/google-login", {
+                      data = await fetch("https://realestate-oho0.onrender.com/google-login", {
                         method: "post",
                         body: JSON.stringify({
                           username: name,

@@ -83,7 +83,7 @@ export default function () {
   const [disable, setDisable] = useState(true);
 
   const getProperty = async () => {
-    const result = await fetch(`http://localhost:5000/getPropertyDetails`, {
+    const result = await fetch(`https://realestate-oho0.onrender.com/getPropertyDetails`, {
       method: "post",
       body: JSON.stringify({ _id: id }),
       headers: {

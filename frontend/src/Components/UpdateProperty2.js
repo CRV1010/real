@@ -134,7 +134,7 @@ export default function () {
 
     //to insert the image in my images folder and get te images names to store in database
     const result = await axios.post(
-      "http://localhost:5000/upload-image", //this is api call here
+      "https://realestate-oho0.onrender.com/upload-image", //this is api call here
       formData,
       {
         headers: { "Content-Type": "multipart/form-data" },
@@ -146,7 +146,7 @@ export default function () {
     console.log("img name", imageName);
     //Updating information to database
     let data = await fetch(
-      `http://localhost:5000/update-database/${prodetail._id}`,
+      `https://realestate-oho0.onrender.com/update-database/${prodetail._id}`,
       {
         method: "put",
         body: JSON.stringify({
@@ -173,7 +173,7 @@ export default function () {
     if (data) {
       toast.success("Property Updated Successfully...", {
         position: "top-right",
-        autoClose: 2000,
+        autoClose: 4000,
         hideProgressBar: false,
         closeOnClick: true,
         rtl: false,
@@ -186,8 +186,8 @@ export default function () {
     console.log("Data updated Successfully...");
     setImages([]);
     setImageURLs([]);
-    // window.location.href = "/profile";
-    navigate("/profile");
+    window.location.href = "/profile";
+    // navigate("/profile");
   };
 
   const deleteImage = (e) => {

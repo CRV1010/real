@@ -8,7 +8,7 @@ const AdminUsers = () => {
       getAllUsers();
     }, []);
     const getAllUsers = async () =>{
-         const result = await fetch("http://localhost:5000/getAllUsers", {
+         const result = await fetch("https://realestate-oho0.onrender.com/getAllUsers", {
            method: "get",
            headers: {
              "Content-Type": "application/json",
@@ -36,7 +36,7 @@ const AdminUsers = () => {
         // Delete Conversations
 
         const res = await fetch(
-          `http://localhost:5000/conversations/${id}`,
+          `https://realestate-oho0.onrender.com/conversations/${id}`,
           {
             method: "GET",
             header: {
@@ -49,7 +49,7 @@ const AdminUsers = () => {
         resData.map(async (conversationId)=>{
             console.log("conId",conversationId?.conversationId);
             let data = await fetch(
-              `http://localhost:5000/conversations/${conversationId?.conversationId}`,
+              `https://realestate-oho0.onrender.com/conversations/${conversationId?.conversationId}`,
               {
                 method: "delete",
                 // headers: {
@@ -63,7 +63,7 @@ const AdminUsers = () => {
         // delete Property
         console.log(id);
         let data = await fetch(
-          `http://localhost:5000/user-property-delete/${id}`,
+          `https://realestate-oho0.onrender.com/user-property-delete/${id}`,
           {
             method: "delete",
             // headers: {
@@ -75,7 +75,7 @@ const AdminUsers = () => {
         console.log(data);
        
         // deleting user
-        let deluser = await fetch(`http://localhost:5000/delete-user/${id}`, {
+        let deluser = await fetch(`https://realestate-oho0.onrender.com/delete-user/${id}`, {
           method: "delete",
           // headers: {
           //   authorization: `bearer ${JSON.parse(localStorage.getItem("token"))}`,

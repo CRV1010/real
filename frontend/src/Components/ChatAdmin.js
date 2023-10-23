@@ -16,7 +16,7 @@ const ChatAdmin = () => {
   const createConvo = async () => {
     if (user) {
       if (user?._id !== "650b0d9532d958c9727bea89") {
-        let res = await fetch("http://localhost:5000/conversations", {
+        let res = await fetch("https://realestate-oho0.onrender.com/conversations", {
           method: "POST",
           body: JSON.stringify({
             senderId: user?._id,
@@ -33,7 +33,7 @@ const ChatAdmin = () => {
 
           window.location.reload(false);
 
-          const res = await fetch("http://localhost:5000/messages", {
+          const res = await fetch("https://realestate-oho0.onrender.com/messages", {
             method: "POST",
             body: JSON.stringify({
               conversationId: result._id,
@@ -69,7 +69,7 @@ const ChatAdmin = () => {
   // console.log(messages, "msgs");
 
   useEffect(() => {
-    setSocket(io("http://localhost:5555"));
+    setSocket(io("https://realestate-oho0.onrender.com/"));
     // window.location.reload(false);
   }, []);
 
@@ -106,7 +106,7 @@ const ChatAdmin = () => {
     const userId = JSON.parse(localStorage.getItem("user"));
     // const uid = JSON.parse(userId._id)
     console.log("my Uid",userId._id);
-    const res = await fetch(`http://localhost:5000/conversations/${userId?._id}`,
+    const res = await fetch(`https://realestate-oho0.onrender.com/conversations/${userId?._id}`,
       {
         method: "GET",
         header: {
@@ -126,7 +126,7 @@ const ChatAdmin = () => {
     setChatwith(users);
     setCid(conversationId);
     const res = await fetch(
-      `http://localhost:5000/messages/${conversationId}`,
+      `https://realestate-oho0.onrender.com/messages/${conversationId}`,
       {
         method: "GET",
         header: {
@@ -154,7 +154,7 @@ const ChatAdmin = () => {
       receiverId: receiver,
       message: msg,
     });
-    const res = await fetch("http://localhost:5000/messages", {
+    const res = await fetch("https://realestate-oho0.onrender.com/messages", {
       method: "POST",
       body: JSON.stringify({
         conversationId: cid,

@@ -38,7 +38,7 @@ export default function PaymentGateway(amount) {
 
     try {
 
-      const data = await fetch("http://localhost:5000/razorpay", {
+      const data = await fetch("https://realestate-oho0.onrender.com/razorpay", {
         method: "POST",
         body: JSON.stringify({ amount }),
         headers: {
@@ -52,7 +52,7 @@ export default function PaymentGateway(amount) {
         amount: data.amount,
         name: "Real Estate",
         description: "Wallet Transaction",
-        image: "http://localhost:5000/logo.png",
+        image: "https://realestate-oho0.onrender.com/logo.png",
         order_id: data.id,
         handler: function (response) {
           

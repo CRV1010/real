@@ -49,7 +49,7 @@ export default function () {
     }, []);
 
     async function getData() {
-        const result = await fetch("http://localhost:5000/get-data", {
+        const result = await fetch("https://realestate-oho0.onrender.com/get-data", {
             method: "get",
             headers: {
                 "Content-Type": "application/json",
@@ -83,7 +83,7 @@ export default function () {
     }
 
     async function getSeller() {
-        const result = await fetch("http://localhost:5000/get-seller", {
+        const result = await fetch("https://realestate-oho0.onrender.com/get-seller", {
             method: "get",
             headers: {
                 "Content-Type": "application/json",
@@ -108,7 +108,7 @@ export default function () {
     async function Increse_Likes() {
 
         var imageId = localStorage.getItem('pressCard');
-        const result = await fetch('http://localhost:5000/like', {
+        const result = await fetch('https://realestate-oho0.onrender.com/like', {
             method: "put",
             body: JSON.stringify({ user_id, imageId }),
             headers: {
@@ -139,7 +139,7 @@ export default function () {
     }
 
     const chatwithseller = async (id) => {
-        let res = await fetch("http://localhost:5000/conversations", {
+        let res = await fetch("https://realestate-oho0.onrender.com/conversations", {
             method: "POST",
             body: JSON.stringify({
                 senderId: user_id,

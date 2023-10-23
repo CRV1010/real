@@ -23,16 +23,13 @@ const Footer = () => {
               <a href="#" className="text-gray-600 hover:text-blue-800">Help</a>
             </li>
             <li className="ml-5">
-              <a href="./searchbar" className="text-gray-600 hover:text-blue-800">Map</a>
+              <a href="./searchmap" className="text-gray-600 hover:text-blue-800">Map</a>
             </li>
             <li className="ml-5">
               <a href="./sell" className="text-gray-600 hover:text-blue-800">Sell</a>
             </li>
             <li className="ml-5">
               <a href="./explore" className="text-gray-600 hover:text-blue-800">Explore</a>
-            </li>
-            <li className="ml-5">
-              <a href="#" className="text-gray-600 hover:text-blue-800">Help</a>
             </li>
           </div>
         </div>

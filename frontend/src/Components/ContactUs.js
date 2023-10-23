@@ -13,7 +13,7 @@ const ContactUs = () => {
   } = useForm();
 
   const clickHandler = async () => {
-    let data = await fetch("http://localhost:5000/user-contact", {
+    let data = await fetch("https://realestate-oho0.onrender.com/user-contact", {
       method: "post",
       body: JSON.stringify({ username, email, message }),
       headers: {

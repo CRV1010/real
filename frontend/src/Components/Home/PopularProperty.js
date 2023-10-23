@@ -6,7 +6,7 @@ const PopularProperty = () => {
     var user = JSON.parse(localStorage.getItem("user"));
     const user_id = user?._id;
     const advertisment = async () =>{
-        const result = await fetch(`http://localhost:5000/getPropertyDetails`, {
+        const result = await fetch(`https://realestate-oho0.onrender.com/getPropertyDetails`, {
         method: "post",
         body: JSON.stringify({ premium : 1 }),
         headers: {
